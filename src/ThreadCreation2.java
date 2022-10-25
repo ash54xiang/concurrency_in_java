@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.xml.validation.Validator;
-
 public class ThreadCreation2 {
     public static final int MAX_PASSWORD = 9999;
 
