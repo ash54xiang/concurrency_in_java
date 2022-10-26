@@ -66,8 +66,8 @@
 1. If the thread is executing a method that throws an InterruptedException
 2. If the thread's code is handling the interrupt signal explicitly
 ```
-thread.interrupt() // to interrupt the thread
-Thread.currentThread().isInterrupted() // to check if current thread is interrupted
+thread.interrupt(); // to interrupt the thread
+Thread.currentThread().isInterrupted(); // to check if current thread is interrupted
 ```
 
 # Daemon Threads
