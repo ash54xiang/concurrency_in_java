@@ -21,13 +21,6 @@ public class ThreadCreation2 {
         }
     }
 
-    private static class NewThread extends Thread {
-        @Override
-        public void run() {
-            System.out.println("Hello from " + this.getName());
-        }
-    }
-
     private static class Vault {
         private int password;
 
