@@ -53,3 +53,32 @@
 # Multiprocesses for:
     - Security and stability are of higher importance
     - Tasks are unrelated to each other
+
+# Thread Termination - Why and When?
+    - Threads consume resources
+        - Memory and kernel resources
+        - CPU cycles and cache memory
+    - If a thread finished its work, but the application is still running, we want to clean up the thread's resources
+    - If a thread is misbehaving, we want to stop it
+    - By default, the application will not stop as long as at least one thread is still running
+
+# When can we Interrupt a Thread?
+    1. If the thread is executing a method that throws an InterruptedException
+    2. If the thread's code is handling the interrupt signal explicitly
+    ```
+    thread.interrupt() // to interrupt the thread
+    Thread.currentThread().isInterrupted() // to check if current thread is interrupted
+    ```
+
+# Daemon Threads
+    - Background threads that do not prevent the application from exiting if the main thread terminates
+    - Scenario 1:
+        - background tasks, that should not block our application from terminating
+        - Ex: File saving thread in a Text Editor
+    - Scenario 2:
+        - Code in a worker thread is not under our control, and we do not want it to block our application from terminating
+        - Ex: Worker thread that uses an external library
+    ```
+    thread.setDaemon(true);
+    ```
+    - the above line of code is to set the thread as a Daemon Thread, so the main thread will not wait for that thread to finish to exit the program. 
