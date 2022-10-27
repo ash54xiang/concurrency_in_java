@@ -6,8 +6,8 @@ public class ThreadTerminationAndInterrupt {
         Thread thread = new Thread(new LongComputationTask(new BigInteger("10000"), new BigInteger("200000")));
 
         thread.start();
-        thread.interrupt(); // without this interrupt call, the main thread will keep waiting for the thread
-                            // to finish computation and making the program hangs
+        thread.interrupt(); // without this interrupt call, the main thread will keep
+        // waiting for the thread to finish computation and making the program hangs
     }
 
     private static class LongComputationTask implements Runnable {

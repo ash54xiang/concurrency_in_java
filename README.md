@@ -82,3 +82,10 @@ Thread.currentThread().isInterrupted(); // to check if current thread is interru
 thread.setDaemon(true);
 ```
 - the above line of code is to set the thread as a Daemon Thread, so the main thread will not wait for that thread to finish to exit the program. 
+
+# Thread Coordination - why do we need it?
+- Different threads run independently
+- Order of execution is out of our control
+```
+thread.join(); // to join thread with main thread
+```
