@@ -2,10 +2,11 @@ import java.math.BigInteger;
 
 public class ThreadTerminationAndInterrupt {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new LongComputationTask(new BigInteger("10000"), new BigInteger("200000")));
 
         thread.start();
+        Thread.sleep(100);
         thread.interrupt(); // without this interrupt call, the main thread will keep
         // waiting for the thread to finish computation and making the program hangs
     }
